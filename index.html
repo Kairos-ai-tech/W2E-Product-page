@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W2E — What to Eat | Your AI Foodie Bestie</title>
+  <meta name="description" content="W2E uses AI to find your next meal without the debate. Match food preferences with your squad and eat happy. Download now!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo"><img src="imgs/w2e_app_icon.png" alt="W2E logo" class="nav-logo-img">W2E</a>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How It Works</a>
+        <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+        <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-btn" id="langBtn" aria-label="Select language">
+            <span id="langCurrent">EN</span>
+            <span class="lang-arrow">&#9662;</span>
+          </button>
+          <ul class="lang-menu" id="langMenu">
+            <li data-lang="en">English</li>
+            <li data-lang="zh">繁體中文</li>
+            <li data-lang="zh-cn">简体中文</li>
+            <li data-lang="ja">日本語</li>
+            <li data-lang="ko">한국어</li>
+            <li data-lang="es">Español</li>
+            <li data-lang="it">Italiano</li>
+            <li data-lang="fr">Français</li>
+          </ul>
+        </div>
+        <a href="#download" class="btn btn-nav" data-i18n="nav.getApp">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-top">
+        <img src="imgs/w2e_app_icon.png" alt="W2E app icon" class="hero-logo">
+        <span class="hero-badge" data-i18n="hero.badge">🔥 #1 Food Discovery App for Gen Z</span>
+      </div>
+      <h1 class="hero-title" data-i18n="hero.title">Your AI Foodie Bestie 🍜</h1>
+      <p class="hero-sub" data-i18n="hero.sub">Find your next meal without the debate. AI-powered picks for you and your squad — just swipe, match, and eat.</p>
+      <div class="hero-buttons">
+        <a href="#download" class="btn btn-primary" data-i18n="hero.cta">Get Started 🚀</a>
+        <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero.secondary">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <span class="deco-emoji deco-1">🍕</span>
+      <span class="deco-emoji deco-2">🌮</span>
+      <span class="deco-emoji deco-3">🍣</span>
+      <span class="deco-emoji deco-4">🧋</span>
+      <span class="deco-emoji deco-5">🍔</span>
+      <span class="deco-emoji deco-6">🍰</span>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <h2 class="section-title" data-i18n="howItWorks.title">How It Works</h2>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-number">1</div>
+        <div class="step-icon">📱</div>
+        <h3 class="step-title" data-i18n="howItWorks.step1Title">Create Your Profile</h3>
+        <p class="step-desc" data-i18n="howItWorks.step1Desc">Sign up and build your taste profile — pick your favorite cuisines, dietary preferences, and food styles.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"></div>
+      <div class="step fade-in">
+        <div class="step-number">2</div>
+        <div class="step-icon">🤝</div>
+        <h3 class="step-title" data-i18n="howItWorks.step2Title">Invite Your Squad</h3>
+        <p class="step-desc" data-i18n="howItWorks.step2Desc">Add friends and start a match session. Everyone votes on what they're craving — W2E finds the perfect spot.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"></div>
+      <div class="step fade-in">
+        <div class="step-number">3</div>
+        <div class="step-icon">🎉</div>
+        <h3 class="step-title" data-i18n="howItWorks.step3Title">Eat & Explore</h3>
+        <p class="step-desc" data-i18n="howItWorks.step3Desc">Head to your matched restaurant, share live locations, earn rewards, and track your food journey on the map.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <h2 class="section-title" data-i18n="features.title">Why You'll Love W2E ✨</h2>
+    <div class="features-grid">
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🔍</div>
+        <h3 class="feature-title" data-i18n="features.discoverTitle">Discover</h3>
+        <p class="feature-desc" data-i18n="features.discoverDesc">Search for restaurants and food spots near you with Google Maps integration. Never wonder "what's around here?" again.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🤝</div>
+        <h3 class="feature-title" data-i18n="features.squadTitle">Squad Match</h3>
+        <p class="feature-desc" data-i18n="features.squadDesc">Match food preferences with your friends to find places everyone will love. No more endless "idk, what do you want?" debates.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🍜</div>
+        <h3 class="feature-title" data-i18n="features.tasteTitle">Taste Profile</h3>
+        <p class="feature-desc" data-i18n="features.tasteDesc">Build your personal food preferences — categories, styles, and choices. W2E learns what you love and recommends accordingly.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title" data-i18n="features.rewardsTitle">Rewards & Achievements</h3>
+        <p class="feature-desc" data-i18n="features.rewardsDesc">Earn points for posts, reviews, and referrals. Unlock achievements, climb the leaderboard, and build your streaks.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🗺️</div>
+        <h3 class="feature-title" data-i18n="features.journeyTitle">Food Journey</h3>
+        <p class="feature-desc" data-i18n="features.journeyDesc">Track your culinary adventures on an interactive map. See everywhere you've been and plan where to go next.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon">📍</div>
+        <h3 class="feature-title" data-i18n="features.locationTitle">Live Location</h3>
+        <p class="feature-desc" data-i18n="features.locationDesc">Share your real-time location with your squad during match sessions. See travel times and meet up effortlessly.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat fade-in">
+        <span class="stat-number" data-count="5000">0</span><span class="stat-plus">+</span>
+        <span class="stat-label" data-i18n="stats.foodies">Active Foodies</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-number" data-count="20000">0</span><span class="stat-plus">+</span>
+        <span class="stat-label" data-i18n="stats.restaurants">Restaurants Discovered</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-number" data-count="50000">0</span><span class="stat-plus">+</span>
+        <span class="stat-label" data-i18n="stats.matches">Matches Made</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-number" data-count="8">0</span>
+        <span class="stat-label" data-i18n="stats.languages">Languages Supported</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-title" data-i18n="testimonials.title">What Foodies Are Saying</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text" data-i18n="testimonials.text1">"Finally solved the 'what should we eat?' problem with my friends. Squad Match is a game changer!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <p class="testimonial-name">Alex C.</p>
+            <p class="testimonial-role" data-i18n="testimonials.role1">College Student</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text" data-i18n="testimonials.text2">"I love tracking my food journey on the map. It's so satisfying to see all the places I've explored!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <p class="testimonial-name">Mia L.</p>
+            <p class="testimonial-role" data-i18n="testimonials.role2">Food Blogger</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text" data-i18n="testimonials.text3">"The rewards and streaks keep me coming back. Found so many hidden gems I would've never tried otherwise."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <p class="testimonial-name">Jason W.</p>
+            <p class="testimonial-role" data-i18n="testimonials.role3">Software Engineer</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA / Download -->
+  <section class="cta" id="download">
+    <div class="cta-content">
+      <h2 class="cta-title" data-i18n="cta.title">Ready to Eat Better Together? 🔥</h2>
+      <p class="cta-sub" data-i18n="cta.sub">Join thousands of foodies discovering their next favorite spot with W2E.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary btn-lg" data-i18n="cta.ios">Download for iOS</a>
+        <a href="#" class="btn btn-secondary btn-lg" data-i18n="cta.android">Download for Android</a>
+      </div>
+      <p class="cta-note" data-i18n="cta.note">Available on iOS & Android — Free to use</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="imgs/w2e_app_icon.png" alt="W2E logo" class="footer-logo-img">W2E — What to Eat</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 W2E. Made with ❤️ for foodies everywhere.</p>
+      <div class="footer-links">
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#" data-i18n="footer.terms">Terms</a>
+        <a href="#" data-i18n="footer.contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
