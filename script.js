@@ -175,6 +175,17 @@
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
+    // Close mobile nav on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobileOverlay.classList.contains("open")) {
+        hamburger.classList.remove("active");
+        mobileOverlay.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        hamburger.focus();
+      }
+    });
+
     // Close mobile nav when a link is clicked
     mobileOverlay.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
@@ -200,7 +211,12 @@
       // Firebase Firestore, Mailchimp, or a serverless function). Emails are
       // NOT being collected server-side in the current implementation — they
       // are only saved locally and will be lost if the user clears storage.
-      var waitlist = JSON.parse(localStorage.getItem("w2e-waitlist") || "[]");
+      var waitlist;
+      try {
+        waitlist = JSON.parse(localStorage.getItem("w2e-waitlist") || "[]");
+      } catch (e) {
+        waitlist = [];
+      }
       if (waitlist.indexOf(email.value) === -1) {
         waitlist.push(email.value);
         localStorage.setItem("w2e-waitlist", JSON.stringify(waitlist));
@@ -329,8 +345,10 @@
     carouselTrack.addEventListener("focusin", function () {
       clearInterval(autoplayInterval);
     });
-    carouselTrack.addEventListener("focusout", function () {
-      startAutoplay();
+    carouselTrack.addEventListener("focusout", function (e) {
+      if (!carouselTrack.contains(e.relatedTarget) && !dotsContainer.contains(e.relatedTarget)) {
+        startAutoplay();
+      }
     });
 
     if (!prefersReducedMotion) startAutoplay();
