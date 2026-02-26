@@ -8,6 +8,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kairos-ai-tech.github.io/W2E-Product-page/">
+  <meta property="og:title" content="W2E — What to Eat | Your AI Foodie Bestie">
+  <meta property="og:description" content="W2E uses AI to find your next meal without the debate. Match food preferences with your squad and eat happy. Download now!">
+  <meta property="og:image" content="https://kairos-ai-tech.github.io/W2E-Product-page/imgs/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="W2E — What to Eat | Your AI Foodie Bestie">
+  <meta name="twitter:description" content="W2E uses AI to find your next meal without the debate. Match food preferences with your squad and eat happy.">
+  <meta name="twitter:image" content="https://kairos-ai-tech.github.io/W2E-Product-page/imgs/og-image.png">
+
+  <!-- Extra SEO -->
+  <meta name="theme-color" content="#3a87c8">
+  <link rel="canonical" href="https://kairos-ai-tech.github.io/W2E-Product-page/">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,8 +44,14 @@
         <a href="#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How It Works</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
         <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a>
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
       </div>
       <div class="nav-right">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-btn" id="langBtn" aria-label="Select language">
             <span id="langCurrent">EN</span>
@@ -46,16 +76,23 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-top">
-        <img src="imgs/w2e_app_icon.png" alt="W2E app icon" class="hero-logo">
-        <span class="hero-badge" data-i18n="hero.badge">🔥 #1 Food Discovery App for Gen Z</span>
-      </div>
+      <img src="imgs/w2e_app_icon.png" alt="W2E app icon" class="hero-logo">
       <h1 class="hero-title" data-i18n="hero.title">Your AI Foodie Bestie 🍜</h1>
       <p class="hero-sub" data-i18n="hero.sub">Find your next meal without the debate. AI-powered picks for you and your squad — just swipe, match, and eat.</p>
       <div class="hero-buttons">
         <a href="#download" class="btn btn-primary" data-i18n="hero.cta">Get Started 🚀</a>
         <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero.secondary">See How It Works</a>
       </div>
+    </div>
+    <div class="hero-mockup fade-in">
+      <img src="imgs/hero-mockup.svg" alt="W2E app preview" class="hero-phone" loading="eager">
+    </div>
+    <div class="hero-glass-blobs" aria-hidden="true">
+      <div class="glass-blob blob-1"></div>
+      <div class="glass-blob blob-2"></div>
+      <div class="glass-blob blob-3"></div>
+      <div class="glass-blob blob-4"></div>
+      <div class="glass-blob blob-5"></div>
     </div>
     <div class="hero-deco" aria-hidden="true">
       <span class="deco-emoji deco-1">🍕</span>
@@ -64,6 +101,60 @@
       <span class="deco-emoji deco-4">🧋</span>
       <span class="deco-emoji deco-5">🍔</span>
       <span class="deco-emoji deco-6">🍰</span>
+    </div>
+  </section>
+
+  <!-- Why W2E -->
+  <section class="why-w2e" id="why-w2e">
+    <h2 class="section-title" data-i18n="whyW2e.title">Why W2E?</h2>
+    <p class="section-subtitle" data-i18n="whyW2e.sub">Life has enough decisions. Meals shouldn't be one of them.</p>
+    <div class="why-grid">
+
+      <div class="why-card fade-in">
+        <div class="why-card-visual">
+          <div class="why-icon-ring">
+            <span class="why-icon">🧠</span>
+          </div>
+          <div class="why-card-glow"></div>
+        </div>
+        <h3 class="why-card-title" data-i18n="whyW2e.card1Title">Save Your Mental Energy</h3>
+        <p class="why-card-desc" data-i18n="whyW2e.card1Desc">You already decide hundreds of things every day. Where to eat shouldn't drain you. W2E's AI handles the food decisions so you can focus on what matters.</p>
+        <div class="why-card-stat">
+          <span class="why-stat-number">35,000+</span>
+          <span class="why-stat-label" data-i18n="whyW2e.card1Stat">decisions the average person makes daily</span>
+        </div>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-visual">
+          <div class="why-icon-ring">
+            <span class="why-icon">🍜</span>
+          </div>
+          <div class="why-card-glow"></div>
+        </div>
+        <h3 class="why-card-title" data-i18n="whyW2e.card2Title">Discover Food You'll Love</h3>
+        <p class="why-card-desc" data-i18n="whyW2e.card2Desc">Stop scrolling the same 5 restaurants. W2E learns your taste profile and surfaces hidden gems tailored to your cravings, mood, and location.</p>
+        <div class="why-card-stat">
+          <span class="why-stat-number">20,000+</span>
+          <span class="why-stat-label" data-i18n="whyW2e.card2Stat">restaurants discovered by our users</span>
+        </div>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-visual">
+          <div class="why-icon-ring">
+            <span class="why-icon">🤝</span>
+          </div>
+          <div class="why-card-glow"></div>
+        </div>
+        <h3 class="why-card-title" data-i18n="whyW2e.card3Title">Find Your Food Tribe</h3>
+        <p class="why-card-desc" data-i18n="whyW2e.card3Desc">Connect with friends — and new people — who share your taste. Squad Match doesn't just find restaurants, it finds your foodie community.</p>
+        <div class="why-card-stat">
+          <span class="why-stat-number">50,000+</span>
+          <span class="why-stat-label" data-i18n="whyW2e.card3Stat">squad matches made so far</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -138,6 +229,158 @@
     </div>
   </section>
 
+  <!-- App Preview / Screenshot Carousel -->
+  <section class="app-preview" id="app-preview">
+    <h2 class="section-title" data-i18n="preview.title">See W2E in Action</h2>
+    <p class="section-subtitle" data-i18n="preview.sub">Swipe through real app screens and see how easy food discovery gets.</p>
+    <div class="preview-carousel">
+      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">&#8592;</button>
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="preview-card active">
+            <div class="preview-screen">
+              <div class="preview-screen-header">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <div class="preview-screen-content">
+                <div class="preview-icon-large">🔍</div>
+                <h4 data-i18n="preview.screen1Title">Discover Nearby</h4>
+                <p data-i18n="preview.screen1Desc">Browse restaurants on an interactive map powered by Google Maps.</p>
+              </div>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-screen">
+              <div class="preview-screen-header">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <div class="preview-screen-content">
+                <div class="preview-icon-large">🤝</div>
+                <h4 data-i18n="preview.screen2Title">Squad Voting</h4>
+                <p data-i18n="preview.screen2Desc">Everyone swipes on what they're craving. W2E finds the perfect match.</p>
+              </div>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-screen">
+              <div class="preview-screen-header">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <div class="preview-screen-content">
+                <div class="preview-icon-large">🧠</div>
+                <h4 data-i18n="preview.screen3Title">AI Picks</h4>
+                <p data-i18n="preview.screen3Desc">Get personalized restaurant recommendations tailored to your taste.</p>
+              </div>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-screen">
+              <div class="preview-screen-header">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <div class="preview-screen-content">
+                <div class="preview-icon-large">🗺️</div>
+                <h4 data-i18n="preview.screen4Title">Food Journey</h4>
+                <p data-i18n="preview.screen4Desc">Track every restaurant you've visited on your personal food map.</p>
+              </div>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-screen">
+              <div class="preview-screen-header">
+                <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+              </div>
+              <div class="preview-screen-content">
+                <div class="preview-icon-large">🏆</div>
+                <h4 data-i18n="preview.screen5Title">Rewards</h4>
+                <p data-i18n="preview.screen5Desc">Earn points, unlock achievements, and climb the leaderboard.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">&#8594;</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <span class="carousel-dot active"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+    </div>
+  </section>
+
+  <!-- AI-Powered -->
+  <section class="ai-section" id="ai-powered">
+    <div class="ai-inner">
+      <div class="ai-text">
+        <span class="ai-badge" data-i18n="ai.badge">Powered by AI</span>
+        <h2 class="ai-title" data-i18n="ai.title">Smart Picks, Zero Guesswork</h2>
+        <p class="ai-desc" data-i18n="ai.desc">W2E's AI learns your taste profile, analyzes time of day, cuisine trends, and your squad's preferences to serve up personalized restaurant recommendations you'll actually love.</p>
+        <ul class="ai-features-list">
+          <li class="ai-feature-item fade-in">
+            <span class="ai-feature-icon">🧠</span>
+            <div>
+              <strong data-i18n="ai.feature1Title">Personalized Picks</strong>
+              <p data-i18n="ai.feature1Desc">AI-curated suggestions based on your unique taste profile and past favorites.</p>
+            </div>
+          </li>
+          <li class="ai-feature-item fade-in">
+            <span class="ai-feature-icon">⚡</span>
+            <div>
+              <strong data-i18n="ai.feature2Title">Context-Aware</strong>
+              <p data-i18n="ai.feature2Desc">Smart recommendations that adapt to time of day, weather, and what's trending nearby.</p>
+            </div>
+          </li>
+          <li class="ai-feature-item fade-in">
+            <span class="ai-feature-icon">👥</span>
+            <div>
+              <strong data-i18n="ai.feature3Title">Group Intelligence</strong>
+              <p data-i18n="ai.feature3Desc">Finds the perfect match across everyone's preferences — no compromise needed.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ai-visual fade-in">
+        <img src="imgs/feature-ai.svg" alt="AI-powered recommendations" class="ai-mockup" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison: W2E vs Old Way -->
+  <section class="comparison" id="comparison">
+    <h2 class="section-title" data-i18n="comparison.title">W2E vs. The Old Way</h2>
+    <div class="comparison-grid">
+      <div class="comparison-col comparison-old fade-in">
+        <div class="comparison-header comparison-header-old">
+          <span class="comparison-emoji">😩</span>
+          <h3 data-i18n="comparison.oldTitle">Without W2E</h3>
+        </div>
+        <ul class="comparison-list">
+          <li data-i18n="comparison.old1">&#10060; "What do you want to eat?" "Idk, you pick"</li>
+          <li data-i18n="comparison.old2">&#10060; Scrolling through 50 apps and review sites</li>
+          <li data-i18n="comparison.old3">&#10060; Someone always ends up unhappy</li>
+          <li data-i18n="comparison.old4">&#10060; No idea what's actually near you</li>
+          <li data-i18n="comparison.old5">&#10060; Forget the amazing places you've been</li>
+        </ul>
+      </div>
+      <div class="comparison-vs fade-in">VS</div>
+      <div class="comparison-col comparison-new fade-in">
+        <div class="comparison-header comparison-header-new">
+          <span class="comparison-emoji">🎉</span>
+          <h3 data-i18n="comparison.newTitle">With W2E</h3>
+        </div>
+        <ul class="comparison-list">
+          <li data-i18n="comparison.new1">&#10004; AI picks the perfect spot in seconds</li>
+          <li data-i18n="comparison.new2">&#10004; One app, powered by Google Maps + AI</li>
+          <li data-i18n="comparison.new3">&#10004; Squad Match ensures everyone's happy</li>
+          <li data-i18n="comparison.new4">&#10004; Live map shows what's around you</li>
+          <li data-i18n="comparison.new5">&#10004; Food Journey tracks every adventure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Stats -->
   <section class="stats">
     <div class="stats-inner">
@@ -204,14 +447,136 @@
     </div>
   </section>
 
+  <!-- Multi-Language Support -->
+  <section class="multilang" id="multilang">
+    <div class="multilang-inner">
+      <div class="multilang-text fade-in">
+        <span class="ai-badge" data-i18n="multilang.badge">Global Ready</span>
+        <h2 class="multilang-title" data-i18n="multilang.title">Speak Your Language 🌍</h2>
+        <p class="multilang-desc" data-i18n="multilang.desc">W2E speaks 8 languages so you can discover food anywhere in the world. Switch instantly — your entire experience adapts.</p>
+      </div>
+      <div class="multilang-globe fade-in">
+        <div class="lang-orbit">
+          <div class="lang-planet" style="--orbit-delay: 0s;">🇺🇸 EN</div>
+          <div class="lang-planet" style="--orbit-delay: -3s;">🇹🇼 繁中</div>
+          <div class="lang-planet" style="--orbit-delay: -6s;">🇨🇳 简中</div>
+          <div class="lang-planet" style="--orbit-delay: -9s;">🇯🇵 日本語</div>
+          <div class="lang-planet" style="--orbit-delay: -12s;">🇰🇷 한국어</div>
+          <div class="lang-planet" style="--orbit-delay: -15s;">🇪🇸 ES</div>
+          <div class="lang-planet" style="--orbit-delay: -18s;">🇮🇹 IT</div>
+          <div class="lang-planet" style="--orbit-delay: -21s;">🇫🇷 FR</div>
+        </div>
+        <div class="globe-center">🌏</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap / Coming Soon -->
+  <section class="roadmap" id="roadmap">
+    <h2 class="section-title" data-i18n="roadmap.title">What's Coming Next 🚀</h2>
+    <p class="section-subtitle" data-i18n="roadmap.sub">We're just getting started. Here's a taste of what's on the menu.</p>
+    <div class="roadmap-grid">
+      <div class="roadmap-card fade-in">
+        <div class="roadmap-icon">💬</div>
+        <h3 data-i18n="roadmap.item1Title">Group Chat</h3>
+        <p data-i18n="roadmap.item1Desc">Chat with your squad right inside match sessions. Debate less, eat sooner.</p>
+        <span class="roadmap-tag" data-i18n="roadmap.tag1">Coming Soon</span>
+      </div>
+      <div class="roadmap-card fade-in">
+        <div class="roadmap-icon">📸</div>
+        <h3 data-i18n="roadmap.item2Title">Social Sharing</h3>
+        <p data-i18n="roadmap.item2Desc">Share your favorite spots and food journey directly to Instagram, TikTok, and more.</p>
+        <span class="roadmap-tag" data-i18n="roadmap.tag2">Coming Soon</span>
+      </div>
+      <div class="roadmap-card fade-in">
+        <div class="roadmap-icon">🤖</div>
+        <h3 data-i18n="roadmap.item3Title">AI Menu Scanner</h3>
+        <p data-i18n="roadmap.item3Desc">Point your camera at any menu and get instant AI-powered dish recommendations.</p>
+        <span class="roadmap-tag" data-i18n="roadmap.tag3">In Development</span>
+      </div>
+      <div class="roadmap-card fade-in">
+        <div class="roadmap-icon">📅</div>
+        <h3 data-i18n="roadmap.item4Title">Meal Planning</h3>
+        <p data-i18n="roadmap.item4Desc">Schedule meals with your squad, get calendar reminders, and plan your food week.</p>
+        <span class="roadmap-tag" data-i18n="roadmap.tag4">Planned</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <h2 class="section-title" data-i18n="faq.title">Got Questions? 🤔</h2>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq.q1">Is W2E free to use?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq.a1">Yes! W2E is completely free to download and use. All core features including discovery, squad matching, and rewards are free.</p>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq.q2">How does Squad Match work?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq.a2">Create a match session and invite your friends. Everyone swipes on what they're craving, and our AI finds restaurants that match everyone's preferences. No more debates!</p>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq.q3">What makes W2E different from Yelp or Google Maps?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq.a3">W2E is built for groups, not individuals. Our Squad Match feature and AI-powered group recommendations are unique. Plus, gamification with rewards, streaks, and a food journey map make discovery fun.</p>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq.q4">Is my location data safe?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq.a4">Absolutely. Location sharing is always opt-in and only active during match sessions. You have full privacy controls, and we never sell your data. Check our Privacy Policy for details.</p>
+        </div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq.q5">Which countries is W2E available in?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq.a5">W2E works anywhere Google Maps is available. We support 8 languages (English, Traditional Chinese, Simplified Chinese, Japanese, Korean, Spanish, Italian, and French) and are expanding fast!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA / Download -->
   <section class="cta" id="download">
     <div class="cta-content">
       <h2 class="cta-title" data-i18n="cta.title">Ready to Eat Better Together? 🔥</h2>
       <p class="cta-sub" data-i18n="cta.sub">Join thousands of foodies discovering their next favorite spot with W2E.</p>
+      <div class="waitlist-form" id="waitlistForm">
+        <p class="waitlist-label" data-i18n="cta.waitlistLabel">Be the first to know when we launch:</p>
+        <form class="waitlist-input-group" id="waitlistFormEl" action="#" onsubmit="return false;">
+          <input type="email" class="waitlist-input" id="waitlistEmail" placeholder="your@email.com" required data-i18n-placeholder="cta.emailPlaceholder">
+          <button type="submit" class="btn btn-primary btn-waitlist" data-i18n="cta.notify">Notify Me 🚀</button>
+        </form>
+        <p class="waitlist-success" id="waitlistSuccess" data-i18n="cta.successMsg">You're on the list! We'll notify you when W2E launches.</p>
+      </div>
       <div class="cta-buttons">
-        <a href="#" class="btn btn-primary btn-lg" data-i18n="cta.ios">Download for iOS</a>
-        <a href="#" class="btn btn-secondary btn-lg" data-i18n="cta.android">Download for Android</a>
+        <a href="#" class="btn btn-primary btn-lg btn-store" data-i18n="cta.ios">
+          <svg class="store-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download for iOS
+        </a>
+        <a href="#" class="btn btn-secondary btn-lg btn-store" data-i18n="cta.android">
+          <svg class="store-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3.18 23.96c-.36-.17-.58-.53-.58-.96V1c0-.43.22-.79.58-.96L14.17 12 3.18 23.96zm.82-1.73L14.54 12 4 1.77v20.46zM15.32 12.74l-1.74-1.74 1.74-1.74L20 12l-4.68 2.74zM5.35.49L16.04 6.7 13.79 8.95 5.35.49zm0 23.02l8.44-8.46 2.25 2.25L5.35 23.51z"/></svg>
+          Download for Android
+        </a>
       </div>
       <p class="cta-note" data-i18n="cta.note">Available on iOS & Android — Free to use</p>
     </div>
@@ -223,12 +588,33 @@
       <p class="footer-logo"><img src="imgs/w2e_app_icon.png" alt="W2E logo" class="footer-logo-img">W2E — What to Eat</p>
       <p class="footer-copy" data-i18n="footer.copy">© 2026 W2E. Made with ❤️ for foodies everywhere.</p>
       <div class="footer-links">
-        <a href="#" data-i18n="footer.privacy">Privacy</a>
-        <a href="#" data-i18n="footer.terms">Terms</a>
-        <a href="#" data-i18n="footer.contact">Contact</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="mailto:support@w2e.app" data-i18n="footer.contact">Contact</a>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-content">
+      <a href="#how-it-works" class="mobile-nav-link" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+      <a href="#ai-powered" class="mobile-nav-link" data-i18n="nav.aiPowered">AI Powered</a>
+      <a href="#testimonials" class="mobile-nav-link" data-i18n="nav.testimonials">Testimonials</a>
+      <a href="#faq" class="mobile-nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="#download" class="btn btn-primary mobile-nav-cta" data-i18n="nav.getApp">Get the App</a>
+    </div>
+  </div>
+
+  <!-- Google Analytics — replace G-XXXXXXXXXX with your real Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
   <script src="i18n.js"></script>
   <script src="script.js"></script>

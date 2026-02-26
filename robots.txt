@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kairos-ai-tech.github.io/W2E-Product-page/sitemap.xml
