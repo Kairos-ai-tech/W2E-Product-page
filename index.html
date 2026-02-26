@@ -120,7 +120,7 @@
         <h3 class="why-card-title" data-i18n="whyW2e.card1Title">Save Your Mental Energy</h3>
         <p class="why-card-desc" data-i18n="whyW2e.card1Desc">You already decide hundreds of things every day. Where to eat shouldn't drain you. W2E's AI handles the food decisions so you can focus on what matters.</p>
         <div class="why-card-stat">
-          <span class="why-stat-number">35,000+</span>
+          <span class="why-stat-number" data-i18n="whyW2e.card1Number">35,000+</span>
           <span class="why-stat-label" data-i18n="whyW2e.card1Stat">decisions the average person makes daily</span>
         </div>
       </div>
@@ -135,7 +135,7 @@
         <h3 class="why-card-title" data-i18n="whyW2e.card2Title">Discover Food You'll Love</h3>
         <p class="why-card-desc" data-i18n="whyW2e.card2Desc">Stop scrolling the same 5 restaurants. W2E learns your taste profile and surfaces hidden gems tailored to your cravings, mood, and location.</p>
         <div class="why-card-stat">
-          <span class="why-stat-number">20,000+</span>
+          <span class="why-stat-number" data-i18n="whyW2e.card2Number">20,000+</span>
           <span class="why-stat-label" data-i18n="whyW2e.card2Stat">restaurants discovered by our users</span>
         </div>
       </div>
@@ -150,7 +150,7 @@
         <h3 class="why-card-title" data-i18n="whyW2e.card3Title">Find Your Food Tribe</h3>
         <p class="why-card-desc" data-i18n="whyW2e.card3Desc">Connect with friends — and new people — who share your taste. Squad Match doesn't just find restaurants, it finds your foodie community.</p>
         <div class="why-card-stat">
-          <span class="why-stat-number">50,000+</span>
+          <span class="why-stat-number" data-i18n="whyW2e.card3Number">50,000+</span>
           <span class="why-stat-label" data-i18n="whyW2e.card3Stat">squad matches made so far</span>
         </div>
       </div>
@@ -302,11 +302,11 @@
       <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">&#8594;</button>
     </div>
     <div class="carousel-dots" id="carouselDots">
-      <span class="carousel-dot active"></span>
-      <span class="carousel-dot"></span>
-      <span class="carousel-dot"></span>
-      <span class="carousel-dot"></span>
-      <span class="carousel-dot"></span>
+      <button class="carousel-dot active" aria-label="Go to slide 1"></button>
+      <button class="carousel-dot" aria-label="Go to slide 2"></button>
+      <button class="carousel-dot" aria-label="Go to slide 3"></button>
+      <button class="carousel-dot" aria-label="Go to slide 4"></button>
+      <button class="carousel-dot" aria-label="Go to slide 5"></button>
     </div>
   </section>
 
@@ -508,47 +508,47 @@
     <h2 class="section-title" data-i18n="faq.title">Got Questions? 🤔</h2>
     <div class="faq-list">
       <div class="faq-item fade-in">
-        <button class="faq-question" aria-expanded="false">
+        <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
           <span data-i18n="faq.q1">Is W2E free to use?</span>
-          <span class="faq-toggle">+</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
           <p data-i18n="faq.a1">Yes! W2E is completely free to download and use. All core features including discovery, squad matching, and rewards are free.</p>
         </div>
       </div>
       <div class="faq-item fade-in">
-        <button class="faq-question" aria-expanded="false">
+        <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
           <span data-i18n="faq.q2">How does Squad Match work?</span>
-          <span class="faq-toggle">+</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
           <p data-i18n="faq.a2">Create a match session and invite your friends. Everyone swipes on what they're craving, and our AI finds restaurants that match everyone's preferences. No more debates!</p>
         </div>
       </div>
       <div class="faq-item fade-in">
-        <button class="faq-question" aria-expanded="false">
+        <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
           <span data-i18n="faq.q3">What makes W2E different from Yelp or Google Maps?</span>
-          <span class="faq-toggle">+</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
           <p data-i18n="faq.a3">W2E is built for groups, not individuals. Our Squad Match feature and AI-powered group recommendations are unique. Plus, gamification with rewards, streaks, and a food journey map make discovery fun.</p>
         </div>
       </div>
       <div class="faq-item fade-in">
-        <button class="faq-question" aria-expanded="false">
+        <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
           <span data-i18n="faq.q4">Is my location data safe?</span>
-          <span class="faq-toggle">+</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
           <p data-i18n="faq.a4">Absolutely. Location sharing is always opt-in and only active during match sessions. You have full privacy controls, and we never sell your data. Check our Privacy Policy for details.</p>
         </div>
       </div>
       <div class="faq-item fade-in">
-        <button class="faq-question" aria-expanded="false">
+        <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
           <span data-i18n="faq.q5">Which countries is W2E available in?</span>
-          <span class="faq-toggle">+</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
           <p data-i18n="faq.a5">W2E works anywhere Google Maps is available. We support 8 languages (English, Traditional Chinese, Simplified Chinese, Japanese, Korean, Spanish, Italian, and French) and are expanding fast!</p>
         </div>
       </div>
@@ -562,7 +562,7 @@
       <p class="cta-sub" data-i18n="cta.sub">Join thousands of foodies discovering their next favorite spot with W2E.</p>
       <div class="waitlist-form" id="waitlistForm">
         <p class="waitlist-label" data-i18n="cta.waitlistLabel">Be the first to know when we launch:</p>
-        <form class="waitlist-input-group" id="waitlistFormEl" action="#" onsubmit="return false;">
+        <form class="waitlist-input-group" id="waitlistFormEl" action="#">
           <input type="email" class="waitlist-input" id="waitlistEmail" placeholder="your@email.com" required data-i18n-placeholder="cta.emailPlaceholder">
           <button type="submit" class="btn btn-primary btn-waitlist" data-i18n="cta.notify">Notify Me 🚀</button>
         </form>
@@ -585,7 +585,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <p class="footer-logo"><img src="imgs/w2e_app_icon.png" alt="W2E logo" class="footer-logo-img">W2E — What to Eat</p>
+      <p class="footer-logo"><img src="imgs/w2e_app_icon.png" alt="W2E logo" class="footer-logo-img" loading="lazy">W2E — What to Eat</p>
       <p class="footer-copy" data-i18n="footer.copy">© 2026 W2E. Made with ❤️ for foodies everywhere.</p>
       <div class="footer-links">
         <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
@@ -607,7 +607,7 @@
     </div>
   </div>
 
-  <!-- Google Analytics — replace G-XXXXXXXXXX with your real Measurement ID -->
+  <!-- Google Analytics — uncomment and replace G-XXXXXXXXXX with your real Measurement ID when ready
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -615,6 +615,7 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
+  -->
 
   <script src="i18n.js"></script>
   <script src="script.js"></script>

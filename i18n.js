@@ -6,7 +6,6 @@ var W2E_I18N = {
     "nav.testimonials": "Testimonials",
     "nav.getApp": "Get the App",
     "hero.title": "Your AI Foodie Bestie 🍜",
-    "hero.badge": "🔥 #1 Food Discovery App for Gen Z",
     "hero.sub": "Find your next meal without the debate. AI-powered picks for you and your squad — just swipe, match, and eat.",
     "hero.cta": "Get Started 🚀",
     "hero.secondary": "See How It Works",
@@ -128,7 +127,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "restaurants discovered by our users",
     "whyW2e.card3Title": "Find Your Food Tribe",
     "whyW2e.card3Desc": "Connect with friends \u2014 and new people \u2014 who share your taste. Squad Match doesn't just find restaurants, it finds your foodie community.",
-    "whyW2e.card3Stat": "squad matches made so far"
+    "whyW2e.card3Stat": "squad matches made so far",
+    "whyW2e.card1Number": "35,000+",
+    "whyW2e.card2Number": "20,000+",
+    "whyW2e.card3Number": "50,000+"
   },
 
   zh: {
@@ -137,7 +139,6 @@ var W2E_I18N = {
     "nav.testimonials": "用戶評價",
     "nav.getApp": "下載 App",
     "hero.title": "你的 AI 美食好夥伴 🍜",
-    "hero.badge": "🔥 Z世代最愛的美食探索 App",
     "hero.sub": "不用再煩惱吃什麼。AI 幫你和好友挑選美食——滑一滑、配對、開吃！",
     "hero.cta": "立即開始 🚀",
     "hero.secondary": "了解更多",
@@ -259,7 +260,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "被用戶發現的餐廳數量",
     "whyW2e.card3Title": "找到你的美食同好",
     "whyW2e.card3Desc": "和朋友——甚至新朋友——一起探索美食。Squad Match 不只找餐廳，更幫你找到你的美食社群。",
-    "whyW2e.card3Stat": "已完成的配對次數"
+    "whyW2e.card3Stat": "已完成的配對次數",
+    "whyW2e.card1Number": "35,000+",
+    "whyW2e.card2Number": "20,000+",
+    "whyW2e.card3Number": "50,000+"
   },
 
   "zh-cn": {
@@ -268,7 +272,6 @@ var W2E_I18N = {
     "nav.testimonials": "用户评价",
     "nav.getApp": "下载 App",
     "hero.title": "你的 AI 美食好伙伴 🍜",
-    "hero.badge": "🔥 Z世代最爱的美食探索 App",
     "hero.sub": "不用再纠结吃什么。AI 帮你和好友挑选美食——滑一滑、匹配、开吃！",
     "hero.cta": "立即开始 🚀",
     "hero.secondary": "了解更多",
@@ -390,7 +393,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "被用户发现的餐厅数量",
     "whyW2e.card3Title": "找到你的美食同好",
     "whyW2e.card3Desc": "和朋友——甚至新朋友——一起探索美食。Squad Match 不只找餐厅，更帮你找到你的美食社群。",
-    "whyW2e.card3Stat": "已完成的配对次数"
+    "whyW2e.card3Stat": "已完成的配对次数",
+    "whyW2e.card1Number": "35,000+",
+    "whyW2e.card2Number": "20,000+",
+    "whyW2e.card3Number": "50,000+"
   },
 
   ja: {
@@ -399,7 +405,6 @@ var W2E_I18N = {
     "nav.testimonials": "ユーザーの声",
     "nav.getApp": "アプリを入手",
     "hero.title": "あなたの AI グルメ仲間 🍜",
-    "hero.badge": "🔥 Z世代No.1グルメ発見アプリ",
     "hero.sub": "もう「何食べる？」で悩まない。AIがあなたと仲間にぴったりのお店を提案——スワイプ、マッチ、食べるだけ。",
     "hero.cta": "始めよう 🚀",
     "hero.secondary": "使い方を見る",
@@ -521,7 +526,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "ユーザーが発見したレストラン数",
     "whyW2e.card3Title": "フードトライブを見つけよう",
     "whyW2e.card3Desc": "同じ味覚を持つ友人や新しい仲間とつながろう。Squad Matchはレストランだけでなく、あなたのフードコミュニティを見つけます。",
-    "whyW2e.card3Stat": "これまでのスクワッドマッチ数"
+    "whyW2e.card3Stat": "これまでのスクワッドマッチ数",
+    "whyW2e.card1Number": "35,000+",
+    "whyW2e.card2Number": "20,000+",
+    "whyW2e.card3Number": "50,000+"
   },
 
   ko: {
@@ -530,7 +538,6 @@ var W2E_I18N = {
     "nav.testimonials": "후기",
     "nav.getApp": "앱 다운로드",
     "hero.title": "당신의 AI 맛집 친구 🍜",
-    "hero.badge": "🔥 Z세대 최고의 맛집 발견 앱",
     "hero.sub": "뭐 먹을지 더 이상 고민하지 마세요. AI가 당신과 친구들에게 딱 맞는 맛집을 추천 — 스와이프, 매칭, 먹기만 하면 끝!",
     "hero.cta": "시작하기 🚀",
     "hero.secondary": "이용 방법 보기",
@@ -652,7 +659,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "사용자들이 발견한 레스토랑 수",
     "whyW2e.card3Title": "푸드 트라이브를 찾으세요",
     "whyW2e.card3Desc": "같은 입맛을 가진 친구, 그리고 새로운 사람들과 연결되세요. Squad Match는 레스토랑뿐 아니라 푸디 커뮤니티를 찾아줍니다.",
-    "whyW2e.card3Stat": "지금까지의 스쿼드 매치 수"
+    "whyW2e.card3Stat": "지금까지의 스쿼드 매치 수",
+    "whyW2e.card1Number": "35,000+",
+    "whyW2e.card2Number": "20,000+",
+    "whyW2e.card3Number": "50,000+"
   },
 
   es: {
@@ -661,7 +671,6 @@ var W2E_I18N = {
     "nav.testimonials": "Testimonios",
     "nav.getApp": "Obtener App",
     "hero.title": "Tu Compañero Foodie con IA 🍜",
-    "hero.badge": "🔥 App #1 de Descubrimiento de Comida para Gen Z",
     "hero.sub": "Encuentra tu próxima comida sin discutir. La IA elige por ti y tu grupo — desliza, haz match y come.",
     "hero.cta": "Empezar 🚀",
     "hero.secondary": "Ver Cómo Funciona",
@@ -783,7 +792,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "restaurantes descubiertos por nuestros usuarios",
     "whyW2e.card3Title": "Encuentra tu tribu foodie",
     "whyW2e.card3Desc": "Conecta con amigos — y gente nueva — que comparten tus gustos. Squad Match no solo encuentra restaurantes, encuentra tu comunidad foodie.",
-    "whyW2e.card3Stat": "matches de squad realizados hasta ahora"
+    "whyW2e.card3Stat": "matches de squad realizados hasta ahora",
+    "whyW2e.card1Number": "35.000+",
+    "whyW2e.card2Number": "20.000+",
+    "whyW2e.card3Number": "50.000+"
   },
 
   it: {
@@ -792,7 +804,6 @@ var W2E_I18N = {
     "nav.testimonials": "Testimonianze",
     "nav.getApp": "Scarica l'App",
     "hero.title": "Il Tuo Compagno Foodie con IA 🍜",
-    "hero.badge": "🔥 App #1 per Scoprire Cibo della Gen Z",
     "hero.sub": "Trova il tuo prossimo pasto senza discutere. L'IA sceglie per te e il tuo gruppo — scorri, fai match e mangia.",
     "hero.cta": "Inizia Ora 🚀",
     "hero.secondary": "Scopri Come Funziona",
@@ -914,7 +925,10 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "ristoranti scoperti dai nostri utenti",
     "whyW2e.card3Title": "Trova la tua tribù foodie",
     "whyW2e.card3Desc": "Connettiti con amici — e nuove persone — che condividono i tuoi gusti. Squad Match non trova solo ristoranti, trova la tua community foodie.",
-    "whyW2e.card3Stat": "squad match effettuati finora"
+    "whyW2e.card3Stat": "squad match effettuati finora",
+    "whyW2e.card1Number": "35.000+",
+    "whyW2e.card2Number": "20.000+",
+    "whyW2e.card3Number": "50.000+"
   },
 
   fr: {
@@ -923,7 +937,6 @@ var W2E_I18N = {
     "nav.testimonials": "Témoignages",
     "nav.getApp": "Télécharger",
     "hero.title": "Ton Pote Foodie IA 🍜",
-    "hero.badge": "🔥 Appli #1 de Découverte Food pour la Gen Z",
     "hero.sub": "Trouve ton prochain repas sans prise de tête. L'IA choisit pour toi et tes potes — swipe, matche et mange.",
     "hero.cta": "Commencer 🚀",
     "hero.secondary": "Voir Comment ça Marche",
@@ -1045,6 +1058,9 @@ var W2E_I18N = {
     "whyW2e.card2Stat": "restaurants découverts par nos utilisateurs",
     "whyW2e.card3Title": "Trouve ta tribu foodie",
     "whyW2e.card3Desc": "Connecte-toi avec des amis — et de nouvelles personnes — qui partagent tes goûts. Squad Match ne trouve pas que des restaurants, il trouve ta communauté foodie.",
-    "whyW2e.card3Stat": "squad matches réalisés jusqu'ici"
+    "whyW2e.card3Stat": "squad matches réalisés jusqu'ici",
+    "whyW2e.card1Number": "35 000+",
+    "whyW2e.card2Number": "20 000+",
+    "whyW2e.card3Number": "50 000+"
   }
 };

@@ -82,9 +82,12 @@
     fadeEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  // --- Reduced motion check ---
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // --- Parallax glass blobs on scroll ---
   var glassBlobs = document.querySelectorAll(".glass-blob");
-  if (glassBlobs.length) {
+  if (glassBlobs.length && !prefersReducedMotion) {
     var ticking = false;
     window.addEventListener("scroll", function () {
       if (!ticking) {
@@ -101,18 +104,20 @@
     }, { passive: true });
   }
 
-  // --- Tilt effect on feature cards ---
-  document.querySelectorAll(".feature-card, .roadmap-card").forEach(function (card) {
-    card.addEventListener("mousemove", function (e) {
-      var rect = card.getBoundingClientRect();
-      var x = (e.clientX - rect.left) / rect.width - 0.5;
-      var y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = "translateY(-10px) perspective(600px) rotateX(" + (y * -4) + "deg) rotateY(" + (x * 4) + "deg)";
+  // --- Tilt effect on feature cards (only on hover-capable devices) ---
+  if (window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".feature-card, .roadmap-card").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = "translateY(-10px) perspective(600px) rotateX(" + (y * -4) + "deg) rotateY(" + (x * 4) + "deg)";
+      });
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+      });
     });
-    card.addEventListener("mouseleave", function () {
-      card.style.transform = "";
-    });
-  });
+  }
 
   // --- Animated Counter for Stats ---
   function animateCounter(el) {
@@ -185,7 +190,10 @@
       var email = document.getElementById("waitlistEmail");
       if (!email || !email.value) return;
 
-      // Store email in localStorage (replace with real backend later)
+      // TODO(LAUNCH-BLOCKER): Replace localStorage with a real backend (e.g.
+      // Firebase Firestore, Mailchimp, or a serverless function). Emails are
+      // NOT being collected server-side in the current implementation — they
+      // are only saved locally and will be lost if the user clears storage.
       var waitlist = JSON.parse(localStorage.getItem("w2e-waitlist") || "[]");
       if (waitlist.indexOf(email.value) === -1) {
         waitlist.push(email.value);
@@ -304,6 +312,20 @@
       clearInterval(autoplayInterval);
       startAutoplay();
     }
+
+    // Pause autoplay on hover and focus (WCAG 2.2.2)
+    carouselTrack.addEventListener("mouseenter", function () {
+      clearInterval(autoplayInterval);
+    });
+    carouselTrack.addEventListener("mouseleave", function () {
+      startAutoplay();
+    });
+    carouselTrack.addEventListener("focusin", function () {
+      clearInterval(autoplayInterval);
+    });
+    carouselTrack.addEventListener("focusout", function () {
+      startAutoplay();
+    });
 
     startAutoplay();
   }
