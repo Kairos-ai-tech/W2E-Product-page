@@ -52,12 +52,24 @@
     langDropdown.classList.toggle("open");
   });
 
-  // Select language
-  langMenu.addEventListener("click", function (e) {
-    var li = e.target.closest("li[data-lang]");
+  // Select language (click and keyboard)
+  function selectLangFromItem(li) {
     if (!li) return;
     setLanguage(li.getAttribute("data-lang"));
     langDropdown.classList.remove("open");
+  }
+
+  langMenu.addEventListener("click", function (e) {
+    selectLangFromItem(e.target.closest("li[data-lang]"));
+  });
+
+  langMenu.addEventListener("keydown", function (e) {
+    var li = e.target.closest("li[data-lang]");
+    if (!li) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      selectLangFromItem(li);
+    }
   });
 
   // Close dropdown on outside click
@@ -88,8 +100,12 @@
     fadeEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  // --- Reduced motion check ---
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // --- Reduced motion check (reactive to OS setting changes) ---
+  var reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var prefersReducedMotion = reducedMotionQuery.matches;
+  reducedMotionQuery.addEventListener("change", function (e) {
+    prefersReducedMotion = e.matches;
+  });
 
   // --- Parallax glass blobs on scroll ---
   var glassBlobs = document.querySelectorAll(".glass-blob");
@@ -168,31 +184,54 @@
   var mobileOverlay = document.getElementById("mobileNavOverlay");
 
   if (hamburger && mobileOverlay) {
+    function closeMobileNav() {
+      hamburger.classList.remove("active");
+      mobileOverlay.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
     hamburger.addEventListener("click", function () {
       var isOpen = hamburger.classList.toggle("active");
       mobileOverlay.classList.toggle("open", isOpen);
       hamburger.setAttribute("aria-expanded", isOpen);
       document.body.style.overflow = isOpen ? "hidden" : "";
+
+      // Focus first link when opening
+      if (isOpen) {
+        var firstLink = mobileOverlay.querySelector("a");
+        if (firstLink) firstLink.focus();
+      }
     });
 
     // Close mobile nav on Escape key
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && mobileOverlay.classList.contains("open")) {
-        hamburger.classList.remove("active");
-        mobileOverlay.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+        closeMobileNav();
         hamburger.focus();
+      }
+    });
+
+    // Focus trap inside mobile nav overlay
+    mobileOverlay.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var focusable = mobileOverlay.querySelectorAll("a, button, [tabindex]:not([tabindex='-1'])");
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
 
     // Close mobile nav when a link is clicked
     mobileOverlay.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        mobileOverlay.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+        closeMobileNav();
       });
     });
   }
@@ -206,6 +245,7 @@
       e.preventDefault();
       var email = document.getElementById("waitlistEmail");
       if (!email || !email.value) return;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) return;
 
       // TODO(LAUNCH-BLOCKER): Replace localStorage with a real backend (e.g.
       // Firebase Firestore, Mailchimp, or a serverless function). Emails are
@@ -332,7 +372,7 @@
 
     function resetAutoplay() {
       clearInterval(autoplayInterval);
-      startAutoplay();
+      if (!prefersReducedMotion) startAutoplay();
     }
 
     // Pause autoplay on hover and focus (WCAG 2.2.2)

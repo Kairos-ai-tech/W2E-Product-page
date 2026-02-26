@@ -11,30 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .legal-hero { background: var(--gradient-hero); background-size: 200% 200%; animation: heroShift 12s ease-in-out infinite; padding: 8rem 1.5rem 3.5rem; text-align: center; position: relative; }
-    .legal-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%); }
-    .legal-hero-content { position: relative; z-index: 2; }
-    .legal-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--color-white); letter-spacing: -1px; margin-bottom: 0.5rem; }
-    .legal-hero .legal-updated { font-size: 0.95rem; color: rgba(255,255,255,0.7); }
-    .legal-container { max-width: 800px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
-    .legal-container h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-dark); margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.3px; }
-    .legal-container h3 { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--color-dark); margin-top: 1.75rem; margin-bottom: 0.75rem; }
-    .legal-container p { font-size: 0.98rem; color: var(--color-text); line-height: 1.8; margin-bottom: 1rem; }
-    .legal-container ul, .legal-container ol { padding-left: 1.5rem; margin-bottom: 1rem; }
-    .legal-container li { font-size: 0.98rem; color: var(--color-text); line-height: 1.8; margin-bottom: 0.4rem; }
-    .legal-container a { color: var(--color-primary); text-decoration: none; font-weight: 500; }
-    .legal-container a:hover { text-decoration: underline; }
-    .legal-container strong { font-weight: 700; color: var(--color-dark); }
-    .legal-divider { border: none; height: 1px; background: rgba(58,135,200,0.08); margin: 2.5rem 0; }
-    .legal-toc { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(58,135,200,0.06); border-radius: var(--radius-md); padding: 1.75rem 2rem; margin-bottom: 2.5rem; }
-    .legal-toc p { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--color-dark); margin-bottom: 0.75rem; }
-    .legal-toc ol { padding-left: 1.25rem; margin-bottom: 0; }
-    .legal-toc li { font-size: 0.92rem; margin-bottom: 0.3rem; }
-    .legal-toc a { color: var(--color-text-light); }
-    .legal-toc a:hover { color: var(--color-primary); }
-    @media (max-width: 768px) { .legal-hero { padding: 7rem 1.25rem 2.5rem; } .legal-container { padding: 2.5rem 1.25rem 4rem; } }
-  </style>
 </head>
 <body>
   <nav class="nav">
