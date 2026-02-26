@@ -80,14 +80,14 @@
             <span class="lang-arrow">&#9662;</span>
           </button>
           <ul class="lang-menu" id="langMenu" role="listbox">
-            <li data-lang="en" role="option" tabindex="0">English</li>
-            <li data-lang="zh" role="option" tabindex="0">繁體中文</li>
-            <li data-lang="zh-cn" role="option" tabindex="0">简体中文</li>
-            <li data-lang="ja" role="option" tabindex="0">日本語</li>
-            <li data-lang="ko" role="option" tabindex="0">한국어</li>
-            <li data-lang="es" role="option" tabindex="0">Español</li>
-            <li data-lang="it" role="option" tabindex="0">Italiano</li>
-            <li data-lang="fr" role="option" tabindex="0">Français</li>
+            <li data-lang="en" role="option" tabindex="0" aria-selected="false">English</li>
+            <li data-lang="zh" role="option" tabindex="0" aria-selected="false">繁體中文</li>
+            <li data-lang="zh-cn" role="option" tabindex="0" aria-selected="false">简体中文</li>
+            <li data-lang="ja" role="option" tabindex="0" aria-selected="false">日本語</li>
+            <li data-lang="ko" role="option" tabindex="0" aria-selected="false">한국어</li>
+            <li data-lang="es" role="option" tabindex="0" aria-selected="false">Español</li>
+            <li data-lang="it" role="option" tabindex="0" aria-selected="false">Italiano</li>
+            <li data-lang="fr" role="option" tabindex="0" aria-selected="false">Français</li>
           </ul>
         </div>
         <a href="#download" class="btn btn-nav" data-i18n="nav.getApp">Get the App</a>
@@ -618,7 +618,7 @@
   </footer>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav-overlay" id="mobileNavOverlay" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" role="dialog" aria-label="Navigation menu" aria-modal="true">
     <div class="mobile-nav-content">
       <a href="#how-it-works" class="mobile-nav-link" data-i18n="nav.howItWorks">How It Works</a>
       <a href="#features" class="mobile-nav-link" data-i18n="nav.features">Features</a>

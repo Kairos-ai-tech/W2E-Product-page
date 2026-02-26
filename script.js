@@ -37,12 +37,16 @@
       if (strings[key]) el.placeholder = strings[key];
     });
 
-    langCurrent.textContent = LANG_LABELS[lang] || lang.toUpperCase();
+    var langLabel = LANG_LABELS[lang] || lang.toUpperCase();
+    langCurrent.textContent = langLabel;
+    langBtn.setAttribute("aria-label", "Select language, current: " + langLabel);
     document.documentElement.lang = HTML_LANG_MAP[lang] || lang;
 
-    // Update active state in menu
+    // Update active state and aria-selected in menu
     langMenu.querySelectorAll("li").forEach(function (li) {
-      li.classList.toggle("active", li.getAttribute("data-lang") === lang);
+      var isActive = li.getAttribute("data-lang") === lang;
+      li.classList.toggle("active", isActive);
+      li.setAttribute("aria-selected", isActive ? "true" : "false");
     });
   }
 
@@ -116,6 +120,10 @@
         requestAnimationFrame(function () {
           var scrollY = window.pageYOffset;
           glassBlobs.forEach(function (blob, i) {
+            if (prefersReducedMotion) {
+              blob.style.transform = "";
+              return;
+            }
             var speed = 0.03 + (i * 0.015);
             blob.style.transform = "translateY(" + (scrollY * speed) + "px)";
           });
@@ -245,7 +253,12 @@
       e.preventDefault();
       var email = document.getElementById("waitlistEmail");
       if (!email || !email.value) return;
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) return;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.setCustomValidity("Please enter a valid email address.");
+        email.reportValidity();
+        return;
+      }
+      email.setCustomValidity("");
 
       // TODO(LAUNCH-BLOCKER): Replace localStorage with a real backend (e.g.
       // Firebase Firestore, Mailchimp, or a serverless function). Emails are
@@ -380,14 +393,14 @@
       clearInterval(autoplayInterval);
     });
     carouselTrack.addEventListener("mouseleave", function () {
-      startAutoplay();
+      if (!prefersReducedMotion) startAutoplay();
     });
     carouselTrack.addEventListener("focusin", function () {
       clearInterval(autoplayInterval);
     });
     carouselTrack.addEventListener("focusout", function (e) {
       if (!carouselTrack.contains(e.relatedTarget) && !dotsContainer.contains(e.relatedTarget)) {
-        startAutoplay();
+        if (!prefersReducedMotion) startAutoplay();
       }
     });
 
