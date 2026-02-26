@@ -31,6 +31,12 @@
       if (strings[key]) el.textContent = strings[key];
     });
 
+    // Update placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-placeholder");
+      if (strings[key]) el.placeholder = strings[key];
+    });
+
     langCurrent.textContent = LANG_LABELS[lang] || lang.toUpperCase();
     document.documentElement.lang = HTML_LANG_MAP[lang] || lang;
 
@@ -327,7 +333,7 @@
       startAutoplay();
     });
 
-    startAutoplay();
+    if (!prefersReducedMotion) startAutoplay();
   }
 
   // --- Smooth Scroll for Anchor Links ---

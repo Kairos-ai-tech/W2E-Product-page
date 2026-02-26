@@ -186,6 +186,7 @@ body {
   right: 0;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(58, 135, 200, 0.08);
   border-radius: var(--radius-sm);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -432,6 +433,7 @@ body {
 .btn-secondary {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-white);
   padding: 15px 38px;
   font-size: 1.05rem;
@@ -1530,6 +1532,7 @@ section {
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -1695,6 +1698,7 @@ section {
   border: 1.5px solid rgba(58, 135, 200, 0.15);
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-primary);
   font-size: 1.3rem;
   cursor: pointer;
@@ -2439,6 +2443,7 @@ section {
   .hero { animation: none; background-size: 100% 100%; }
   .stats { animation: none; background-size: 100% 100%; }
   .cta { animation: none; background-size: 100% 100%; }
+  html { scroll-behavior: auto; }
 }
 
 /* ===== Accessibility: Focus Styles ===== */
