@@ -31,12 +31,22 @@
       if (strings[key]) el.textContent = strings[key];
     });
 
-    langCurrent.textContent = LANG_LABELS[lang] || lang.toUpperCase();
+    // Update placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-placeholder");
+      if (strings[key]) el.placeholder = strings[key];
+    });
+
+    var langLabel = LANG_LABELS[lang] || lang.toUpperCase();
+    langCurrent.textContent = langLabel;
+    langBtn.setAttribute("aria-label", "Select language, current: " + langLabel);
     document.documentElement.lang = HTML_LANG_MAP[lang] || lang;
 
-    // Update active state in menu
+    // Update active state and aria-selected in menu
     langMenu.querySelectorAll("li").forEach(function (li) {
-      li.classList.toggle("active", li.getAttribute("data-lang") === lang);
+      var isActive = li.getAttribute("data-lang") === lang;
+      li.classList.toggle("active", isActive);
+      li.setAttribute("aria-selected", isActive ? "true" : "false");
     });
   }
 
@@ -46,12 +56,24 @@
     langDropdown.classList.toggle("open");
   });
 
-  // Select language
-  langMenu.addEventListener("click", function (e) {
-    var li = e.target.closest("li[data-lang]");
+  // Select language (click and keyboard)
+  function selectLangFromItem(li) {
     if (!li) return;
     setLanguage(li.getAttribute("data-lang"));
     langDropdown.classList.remove("open");
+  }
+
+  langMenu.addEventListener("click", function (e) {
+    selectLangFromItem(e.target.closest("li[data-lang]"));
+  });
+
+  langMenu.addEventListener("keydown", function (e) {
+    var li = e.target.closest("li[data-lang]");
+    if (!li) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      selectLangFromItem(li);
+    }
   });
 
   // Close dropdown on outside click
@@ -80,6 +102,51 @@
     fadeEls.forEach(function (el) { observer.observe(el); });
   } else {
     fadeEls.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  // --- Reduced motion check (reactive to OS setting changes) ---
+  var reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var prefersReducedMotion = reducedMotionQuery.matches;
+  reducedMotionQuery.addEventListener("change", function (e) {
+    prefersReducedMotion = e.matches;
+  });
+
+  // --- Parallax glass blobs on scroll ---
+  var glassBlobs = document.querySelectorAll(".glass-blob");
+  if (glassBlobs.length && !prefersReducedMotion) {
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var scrollY = window.pageYOffset;
+          glassBlobs.forEach(function (blob, i) {
+            if (prefersReducedMotion) {
+              blob.style.transform = "";
+              return;
+            }
+            var speed = 0.03 + (i * 0.015);
+            blob.style.transform = "translateY(" + (scrollY * speed) + "px)";
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // --- Tilt effect on feature cards (only on hover-capable devices) ---
+  if (window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".feature-card, .roadmap-card").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = "translateY(-10px) perspective(600px) rotateX(" + (y * -4) + "deg) rotateY(" + (x * 4) + "deg)";
+      });
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+      });
+    });
   }
 
   // --- Animated Counter for Stats ---
@@ -120,6 +187,226 @@
     statNumbers.forEach(function (el) { statsObserver.observe(el); });
   }
 
+  // --- Hamburger Menu ---
+  var hamburger = document.getElementById("hamburger");
+  var mobileOverlay = document.getElementById("mobileNavOverlay");
+
+  if (hamburger && mobileOverlay) {
+    function closeMobileNav() {
+      hamburger.classList.remove("active");
+      mobileOverlay.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    hamburger.addEventListener("click", function () {
+      var isOpen = hamburger.classList.toggle("active");
+      mobileOverlay.classList.toggle("open", isOpen);
+      hamburger.setAttribute("aria-expanded", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+
+      // Focus first link when opening
+      if (isOpen) {
+        var firstLink = mobileOverlay.querySelector("a");
+        if (firstLink) firstLink.focus();
+      }
+    });
+
+    // Close mobile nav on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobileOverlay.classList.contains("open")) {
+        closeMobileNav();
+        hamburger.focus();
+      }
+    });
+
+    // Focus trap inside mobile nav overlay
+    mobileOverlay.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var focusable = mobileOverlay.querySelectorAll("a, button, [tabindex]:not([tabindex='-1'])");
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    // Close mobile nav when a link is clicked
+    mobileOverlay.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMobileNav();
+      });
+    });
+  }
+
+  // --- Waitlist Form ---
+  var waitlistForm = document.getElementById("waitlistFormEl");
+  var waitlistSuccess = document.getElementById("waitlistSuccess");
+
+  if (waitlistForm) {
+    waitlistForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("waitlistEmail");
+      if (!email || !email.value) return;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.setCustomValidity("Please enter a valid email address.");
+        email.reportValidity();
+        return;
+      }
+      email.setCustomValidity("");
+
+      // TODO(LAUNCH-BLOCKER): Replace localStorage with a real backend (e.g.
+      // Firebase Firestore, Mailchimp, or a serverless function). Emails are
+      // NOT being collected server-side in the current implementation — they
+      // are only saved locally and will be lost if the user clears storage.
+      var waitlist;
+      try {
+        waitlist = JSON.parse(localStorage.getItem("w2e-waitlist") || "[]");
+      } catch (e) {
+        waitlist = [];
+      }
+      if (waitlist.indexOf(email.value) === -1) {
+        waitlist.push(email.value);
+        localStorage.setItem("w2e-waitlist", JSON.stringify(waitlist));
+      }
+
+      // Track event if GA is available
+      if (typeof gtag === "function") {
+        gtag("event", "waitlist_signup", { email_domain: email.value.split("@")[1] });
+      }
+
+      // Show success message
+      waitlistForm.style.display = "none";
+      if (waitlistSuccess) waitlistSuccess.classList.add("show");
+    });
+  }
+
+  // --- FAQ Accordion ---
+  var faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector(".faq-question");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var isOpen = item.classList.contains("open");
+
+      // Close all other items
+      faqItems.forEach(function (other) {
+        other.classList.remove("open");
+        var otherBtn = other.querySelector(".faq-question");
+        if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+      });
+
+      // Toggle current item
+      if (!isOpen) {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // --- App Preview Carousel ---
+  var carouselTrack = document.getElementById("carouselTrack");
+  var prevBtn = document.getElementById("carouselPrev");
+  var nextBtn = document.getElementById("carouselNext");
+  var dotsContainer = document.getElementById("carouselDots");
+
+  if (carouselTrack && prevBtn && nextBtn && dotsContainer) {
+    var carouselSlides = carouselTrack.querySelectorAll(".preview-card");
+    var carouselDots = dotsContainer.querySelectorAll(".carousel-dot");
+    var currentSlide = 0;
+    var totalSlides = carouselSlides.length;
+    var autoplayInterval;
+
+    function goToSlide(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentSlide = index;
+      carouselTrack.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+
+      // Update active states
+      carouselSlides.forEach(function (slide, i) {
+        slide.classList.toggle("active", i === currentSlide);
+      });
+      carouselDots.forEach(function (dot, i) {
+        dot.classList.toggle("active", i === currentSlide);
+      });
+    }
+
+    prevBtn.addEventListener("click", function () {
+      goToSlide(currentSlide - 1);
+      resetAutoplay();
+    });
+
+    nextBtn.addEventListener("click", function () {
+      goToSlide(currentSlide + 1);
+      resetAutoplay();
+    });
+
+    // Dot navigation
+    carouselDots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () {
+        goToSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    // Touch/swipe support
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    carouselTrack.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselTrack.addEventListener("touchend", function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          goToSlide(currentSlide + 1);
+        } else {
+          goToSlide(currentSlide - 1);
+        }
+        resetAutoplay();
+      }
+    }, { passive: true });
+
+    // Autoplay
+    function startAutoplay() {
+      autoplayInterval = setInterval(function () {
+        goToSlide(currentSlide + 1);
+      }, 4000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      if (!prefersReducedMotion) startAutoplay();
+    }
+
+    // Pause autoplay on hover and focus (WCAG 2.2.2)
+    carouselTrack.addEventListener("mouseenter", function () {
+      clearInterval(autoplayInterval);
+    });
+    carouselTrack.addEventListener("mouseleave", function () {
+      if (!prefersReducedMotion) startAutoplay();
+    });
+    carouselTrack.addEventListener("focusin", function () {
+      clearInterval(autoplayInterval);
+    });
+    carouselTrack.addEventListener("focusout", function (e) {
+      if (!carouselTrack.contains(e.relatedTarget) && !dotsContainer.contains(e.relatedTarget)) {
+        if (!prefersReducedMotion) startAutoplay();
+      }
+    });
+
+    if (!prefersReducedMotion) startAutoplay();
+  }
+
   // --- Smooth Scroll for Anchor Links ---
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (e) {
@@ -132,4 +419,19 @@
       }
     });
   });
+
+  // --- Nav scroll effect ---
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var navTicking = false;
+    window.addEventListener("scroll", function () {
+      if (!navTicking) {
+        requestAnimationFrame(function () {
+          nav.classList.toggle("scrolled", window.pageYOffset > 60);
+          navTicking = false;
+        });
+        navTicking = true;
+      }
+    }, { passive: true });
+  }
 })();
