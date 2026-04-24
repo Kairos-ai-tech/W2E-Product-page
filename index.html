@@ -641,5 +641,53 @@
 
   <script src="i18n.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    if ('modelContext' in navigator) {
+      navigator.modelContext.provideContext({
+        tools: [
+          {
+            name: 'get_app_info',
+            description: 'Get W2E app name, tagline, and description',
+            inputSchema: { type: 'object', properties: {} },
+            execute: () => ({
+              name: 'W2E — What to Eat',
+              tagline: 'Your AI Foodie Bestie',
+              description: 'AI-powered food discovery and squad matching app for Gen Z',
+              website: 'https://w2e.kairosaitech.com',
+              contact: 'sean85120@gmail.com'
+            })
+          },
+          {
+            name: 'get_features',
+            description: 'Get the full list of W2E features',
+            inputSchema: { type: 'object', properties: {} },
+            execute: () => ({
+              features: [
+                'Squad Matching — group food preference matching',
+                'AI Recommendations — personalized meal suggestions via OpenAI',
+                'Food Discovery — restaurant exploration via Google Maps',
+                'Live Location Sharing — real-time location with travel time',
+                'Taste Profiles — build your flavor identity over time',
+                'Rewards & Achievements — streaks, badges, food journey',
+                'Multi-Language — 5 languages supported',
+                'Cross-Platform — iOS, Android, and Web'
+              ]
+            })
+          },
+          {
+            name: 'get_download_links',
+            description: 'Get app store download links for W2E',
+            inputSchema: { type: 'object', properties: {} },
+            execute: () => ({
+              ios: 'https://apps.apple.com/app/w2e',
+              android: 'https://play.google.com/store/apps/details?id=com.w2e',
+              web: 'https://w2e.kairosaitech.com'
+            })
+          }
+        ]
+      });
+    }
+  </script>
 </body>
 </html>

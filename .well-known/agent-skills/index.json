@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "name": "W2E What to Eat",
+  "description": "Agent skills for discovering W2E app information, features, and download links",
+  "skills": [
+    {
+      "name": "get_app_info",
+      "type": "tool",
+      "description": "Retrieve W2E app name, tagline, and core description",
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+    },
+    {
+      "name": "get_features",
+      "type": "tool",
+      "description": "Retrieve the full feature list: squad matching, food discovery, AI recommendations, live location, taste profiles, rewards",
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+    },
+    {
+      "name": "get_download_links",
+      "type": "tool",
+      "description": "Retrieve app store links to download W2E on iOS and Android",
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+    }
+  ]
+}

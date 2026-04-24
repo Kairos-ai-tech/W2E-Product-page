@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-# TODO: Update sitemap URL if the site moves to a custom domain
-Sitemap: https://kairos-ai-tech.github.io/W2E-Product-page/sitemap.xml
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+Sitemap: https://w2e.kairosaitech.com/sitemap.xml

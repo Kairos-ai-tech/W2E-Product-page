@@ -1,0 +1,31 @@
+{
+  "serverInfo": {
+    "name": "W2E — What to Eat",
+    "version": "1.0.0",
+    "description": "W2E is an AI-powered food discovery and squad matching app for Gen Z. Find your next meal, match food preferences with friends, and explore restaurants together.",
+    "homepage": "https://w2e.kairosaitech.com",
+    "contact": "sean85120@gmail.com"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "get_app_info",
+      "description": "Get W2E app information including name, description, and key features",
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "get_download_links",
+      "description": "Get app store download links for W2E",
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "get_features",
+      "description": "Get the full list of W2E app features",
+      "inputSchema": { "type": "object", "properties": {} }
+    }
+  ]
+}

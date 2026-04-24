@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://w2e.kairosaitech.com",
+      "service-doc": [
+        {
+          "href": "https://github.com/Kairos-ai-tech/W2E-Product-page/blob/main/product-readme.md",
+          "type": "text/markdown"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
