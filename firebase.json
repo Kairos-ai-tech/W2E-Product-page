@@ -30,7 +30,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp/server-card.json>; rel=\"describedby\" type=\"application/json\", </index.md>; rel=\"alternate\" type=\"text/markdown\""
+            "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp/server-card.json>; rel=\"describedby\"; type=\"application/json\", </index.md>; rel=\"alternate\"; type=\"text/markdown\", </.well-known/agent-skills/index.json>; rel=\"agent-skills\", </.well-known/oauth-protected-resource>; rel=\"oauth-protected-resource\""
           }
         ]
       },
@@ -50,6 +50,13 @@
       },
       {
         "source": "/.well-known/agent-skills/index.json",
+        "headers": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/.well-known/oauth-protected-resource",
         "headers": [
           { "key": "Content-Type", "value": "application/json" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }

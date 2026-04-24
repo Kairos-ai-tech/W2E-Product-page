@@ -13,6 +13,17 @@
           "href": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json",
           "type": "application/json"
         }
+      ],
+      "alternate": [
+        {
+          "href": "https://w2e.kairosaitech.com/index.md",
+          "type": "text/markdown"
+        }
+      ],
+      "author": [
+        {
+          "href": "mailto:sean85120@gmail.com"
+        }
       ]
     }
   ]

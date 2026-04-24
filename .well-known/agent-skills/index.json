@@ -7,19 +7,22 @@
       "name": "get_app_info",
       "type": "tool",
       "description": "Retrieve W2E app name, tagline, and core description",
-      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json",
+      "sha256": "32b1f9355f481fb223420d184d58fafa940ae676bcc90fdf48a08951b64104ef"
     },
     {
       "name": "get_features",
       "type": "tool",
       "description": "Retrieve the full feature list: squad matching, food discovery, AI recommendations, live location, taste profiles, rewards",
-      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json",
+      "sha256": "32b1f9355f481fb223420d184d58fafa940ae676bcc90fdf48a08951b64104ef"
     },
     {
       "name": "get_download_links",
       "type": "tool",
       "description": "Retrieve app store links to download W2E on iOS and Android",
-      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json"
+      "url": "https://w2e.kairosaitech.com/.well-known/mcp/server-card.json",
+      "sha256": "32b1f9355f481fb223420d184d58fafa940ae676bcc90fdf48a08951b64104ef"
     }
   ]
 }

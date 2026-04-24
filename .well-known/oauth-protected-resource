@@ -1,0 +1,7 @@
+{
+  "resource": "https://w2e.kairosaitech.com",
+  "authorization_servers": [],
+  "bearer_methods_supported": [],
+  "resource_documentation": "https://github.com/Kairos-ai-tech/W2E-Product-page/blob/main/product-readme.md",
+  "resource_signing_alg_values_supported": []
+}

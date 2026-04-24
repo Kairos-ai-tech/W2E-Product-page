@@ -6,6 +6,10 @@
     "homepage": "https://w2e.kairosaitech.com",
     "contact": "sean85120@gmail.com"
   },
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://w2e.kairosaitech.com/mcp"
+  },
   "capabilities": {
     "tools": true,
     "resources": false,
