@@ -18,11 +18,13 @@
     ],
     "redirects": [
       { "source": "/terms.html", "destination": "/terms", "type": 301 },
-      { "source": "/privacy.html", "destination": "/privacy", "type": 301 }
+      { "source": "/privacy.html", "destination": "/privacy", "type": 301 },
+      { "source": "/support.html", "destination": "/support", "type": 301 }
     ],
     "rewrites": [
       { "source": "/terms", "destination": "/terms/index.html" },
-      { "source": "/privacy", "destination": "/privacy/index.html" }
+      { "source": "/privacy", "destination": "/privacy/index.html" },
+      { "source": "/support", "destination": "/support/index.html" }
     ],
     "headers": [
       {
