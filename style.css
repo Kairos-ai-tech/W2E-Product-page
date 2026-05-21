@@ -1385,6 +1385,7 @@ section {
 .hero-phone {
   width: 280px;
   height: auto;
+  border-radius: 36px;
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.25));
   animation: phoneBob 6s ease-in-out infinite;
 }
@@ -1500,6 +1501,7 @@ section {
 .ai-mockup {
   width: 260px;
   height: auto;
+  border-radius: 32px;
   filter: drop-shadow(0 20px 40px rgba(58, 135, 200, 0.12));
 }
 
