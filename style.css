@@ -694,6 +694,32 @@ body {
   border-color: rgba(58, 135, 200, 0.15);
 }
 
+.how-payoff {
+  margin: 4rem auto 0;
+  text-align: center;
+  position: relative;
+}
+
+.how-payoff-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(58, 135, 200, 0.16);
+}
+
+.how-payoff-caption {
+  display: inline-block;
+  margin-top: -1.4rem;
+  padding: 0.55rem 1.4rem;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
 .step-number {
   display: inline-flex;
   align-items: center;
@@ -1108,19 +1134,54 @@ section {
 }
 
 .testimonial-avatar {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  object-fit: cover;
   background: var(--gradient-primary);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1rem;
+  border: 2px solid var(--color-white);
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(58, 135, 200, 0.22);
+}
+
+/* ===== People collage (social splash) ===== */
+.people-collage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3.5rem;
+  padding-top: 1rem;
+}
+
+.people-photo {
+  margin: 0;
+  width: 230px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 6px solid var(--color-white);
+  box-shadow: 0 12px 32px rgba(58, 135, 200, 0.18);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+}
+
+.people-photo img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.people-photo + .people-photo {
+  margin-left: -34px;
+}
+
+.people-photo-1 { transform: rotate(-6deg); }
+.people-photo-2 { transform: rotate(2deg) translateY(-16px); z-index: 2; }
+.people-photo-3 { transform: rotate(6deg); }
+
+.people-photo:hover {
+  transform: rotate(0) scale(1.06);
+  z-index: 3;
+  box-shadow: 0 20px 44px rgba(58, 135, 200, 0.26);
 }
 
 .testimonial-name {
@@ -2154,6 +2215,29 @@ section {
 
   .nav-inner {
     justify-content: space-between;
+  }
+
+  .people-collage {
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+
+  .people-photo {
+    width: 78%;
+    max-width: 320px;
+  }
+
+  .people-photo + .people-photo {
+    margin-left: 0;
+    margin-top: -26px;
+  }
+
+  .people-photo-2 {
+    transform: rotate(2deg);
+  }
+
+  .how-payoff-img {
+    height: 220px;
   }
 
   .hero {
