@@ -1650,6 +1650,34 @@ section {
   flex-shrink: 0;
 }
 
+.store-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.store-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.store-status-live {
+  color: #7be0a3;
+}
+
+.store-status-review {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-store-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+  pointer-events: none;
+}
+
 /* ===== Section Subtitle ===== */
 .section-subtitle {
   text-align: center;
