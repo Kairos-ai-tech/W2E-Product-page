@@ -5,11 +5,13 @@
   var LANG_KEY = "w2e-lang";
   var LANG_LABELS = {
     en: "EN", zh: "繁中", "zh-cn": "简中",
-    ja: "JA", ko: "KO", es: "ES", it: "IT", fr: "FR"
+    ja: "JA", ko: "KO", es: "ES", it: "IT", fr: "FR",
+    de: "DE", pt: "PT", vi: "VI", th: "TH"
   };
   var HTML_LANG_MAP = {
     en: "en", zh: "zh-Hant", "zh-cn": "zh-Hans",
-    ja: "ja", ko: "ko", es: "es", it: "it", fr: "fr"
+    ja: "ja", ko: "ko", es: "es", it: "it", fr: "fr",
+    de: "de", pt: "pt", vi: "vi", th: "th"
   };
 
   var currentLang = localStorage.getItem(LANG_KEY) || "en";
