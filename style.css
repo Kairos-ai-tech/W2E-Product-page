@@ -2014,14 +2014,20 @@ section {
   to { transform: rotate(-360deg); }
 }
 
-.lang-planet:nth-child(1) { top: 0%; left: 50%; transform: translateX(-50%); }
-.lang-planet:nth-child(2) { top: 10%; right: 5%; }
-.lang-planet:nth-child(3) { top: 42%; right: -5%; }
-.lang-planet:nth-child(4) { bottom: 10%; right: 5%; }
-.lang-planet:nth-child(5) { bottom: 0%; left: 50%; transform: translateX(-50%); }
-.lang-planet:nth-child(6) { bottom: 10%; left: 5%; }
-.lang-planet:nth-child(7) { top: 42%; left: -5%; }
-.lang-planet:nth-child(8) { top: 10%; left: 5%; }
+/* 12 planets evenly spaced on a ring (theta = (n-1) * 30deg, R = 45%) */
+.lang-planet { transform: translate(-50%, -50%); }
+.lang-planet:nth-child(1)  { top: 5%;   left: 50%; }
+.lang-planet:nth-child(2)  { top: 11%;  left: 72.5%; }
+.lang-planet:nth-child(3)  { top: 27.5%; left: 89%; }
+.lang-planet:nth-child(4)  { top: 50%;  left: 95%; }
+.lang-planet:nth-child(5)  { top: 72.5%; left: 89%; }
+.lang-planet:nth-child(6)  { top: 89%;  left: 72.5%; }
+.lang-planet:nth-child(7)  { top: 95%;  left: 50%; }
+.lang-planet:nth-child(8)  { top: 89%;  left: 27.5%; }
+.lang-planet:nth-child(9)  { top: 72.5%; left: 11%; }
+.lang-planet:nth-child(10) { top: 50%;  left: 5%; }
+.lang-planet:nth-child(11) { top: 27.5%; left: 11%; }
+.lang-planet:nth-child(12) { top: 11%;  left: 27.5%; }
 
 /* ===== Roadmap Section ===== */
 .roadmap {
